@@ -40,12 +40,12 @@ void grid_test() {
 void MSG_test() {
 	SparseMatrix matrix;
 	matrix.n = 5;
-	matrix.di = { 1,1,1,1,1 };
+	matrix.di = { 10,10,10,10,10 };
 	matrix.jg = { 0,0,1,2,2,3 };
 	matrix.ig = { 0,0,1,3,4,6 };
 	matrix.gg = { 1,2,3,4,5,6 };
-	vector<double> b = { 4,5,15,11,12 };
+	vector<double> b = matrix* vector<double>{ 1,1,1,1,1 };
 	vector<double> x0 = { 0,0,0,0,0 };
 	auto x = MSG_solve(matrix, x0, b, 1e-16, 1000);
-	for (auto i : x) cout << i << '\n';
+	for (auto i : x) cout << abs(i - 1.0) << '\n';
 }

@@ -133,7 +133,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="all.hpp" />
+    <ClInclude Include="assemble.hpp" />
     <ClInclude Include="grid.hpp" />
+    <ClInclude Include="parameters.hpp" />
     <ClInclude Include="sparse_matrix.hpp" />
     <ClInclude Include="t.hpp" />
   </ItemGroup>

@@ -156,16 +156,6 @@ vector<double> MSG_solve(SparseMatrix& A, const vector<double>& x0, const vector
 
 	auto choletsky_matrix = A.Decomposition();
 
-	cout << "di: ";
-	for (auto x : choletsky_matrix.di) cout << x << " ";
-	cout << "\ngg: ";
-	for (auto x : choletsky_matrix.gg) cout << x << " ";
-	cout << "\nig: ";
-	for (auto x : choletsky_matrix.ig) cout << x << " ";
-	cout << "\njg: ";
-	for (auto x : choletsky_matrix.jg) cout << x << " ";
-	cout << "\n";
-
 	auto r = b - A * x0;
 	auto z = solve_SLAE(choletsky_matrix, r);
 	vector<double> x(x0.begin(), x0.end());
